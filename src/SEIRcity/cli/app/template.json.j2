@@ -1,0 +1,23 @@
+{
+	"checkpointable": false,
+	"defaultQueue": "normal",
+	"name": "{{ appid }}",
+	"executionSystem": "covid19.vaughn.exec.frontera",
+	"executionType": "CLI",
+	"deploymentPath": "/apps/{{ appid }}-{{ appversion }}",
+	"deploymentSystem": "covid19.vaughn.storage.work",
+	"helpURI": "https://github.com/UT-Covid/SEIR-city/README.md",
+	"label": "{{ label }}",
+	"shortDescription": "{{ description }}",
+	"longDescription": "Source: https://github.com/UT-Covid/SEIR-city",
+	"modules": ["load intel", "load python3"],
+	"ontology": [],
+	"parallelism": "SERIAL",
+	"tags": [],
+	"templatePath": "runner.sh",
+	"testPath": "tester.sh",
+	"version": "{{ appversion }}",
+	"defaultMaxRunTime": "04:00:00",
+	"inputs": {{ inputs }},
+	"parameters": {{ parameters }}
+}

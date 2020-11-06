@@ -71,6 +71,9 @@ outputs/reproducibility/*.pckl
 outputs/*.png
 untracked/*
 
+# configs (may be needed for tests, ignore rather than delete just in case)
+src/SEIRcity/configs/*
+
 # sbatch / test logs
 logs/*.o*
 logs/*.e*
@@ -84,6 +87,18 @@ app/assets/requirements.txt
 # misc
 .idea
 .pylintrc
+.DS_Store
+outputs/.DS_Store
+tests/.DS_Store
+src/.DS_Store
+configs/.DS_Store
+configs/simulations/.DS_Store
+configs/epidemic_emergence_transmission_reduction/.DS_store
+data/.DS_Store
+data/hospitalization/.DS_Store
+outputs/.DS_Store
+src/DS_Store
+src/SEIRcity/.DS_Store
 
 !*.gitkeep
 

@@ -1,0 +1,104 @@
+# single_scenario0 but with 3 repilcates
+is_fitting: False
+sd_date: [20200325, 20200818]
+DATA_FOLDER: "./data/Cities_Data/"
+RESULTS_DIR: "./outputs"
+# GROWTH_RATE_LIST = ['low', 'high']
+GROWTH_RATE_LIST: ['high']
+# CONTACT_REDUCTION = [0., 0.25, 0.5, 0.75]
+CONTACT_REDUCTION: [0.75]
+# number of replicates per scenario
+NUM_SIM: 3
+# CLOSE_TRIGGER_LIST = ['num_all_20', 'date__' + str(time_begin_sim), 'date__20200314', 'date__20200514', 'date__20220101']
+# CLOSE_TRIGGER_LIST: ['date__' + str(time_begin_sim)]
+CLOSE_TRIGGER_LIST: ['num_all_20']
+# CLOSE_TRIGGER_LIST = ['num_all_20', 'date__' + str(time_begin_sim), 'date__20220101']
+# school reopen after 4 weeks
+# REOPEN_TRIGGER_LIST = ['no_na_4', 'no_na_8', 'no_na_' + FallStartDate]
+# REOPEN_TRIGGER_LIST = ['no_na_4', 'no_na_' + FallStartDate]
+# REOPEN_TRIGGER_LIST = ['no_na_' + FallStartDate]
+REOPEN_TRIGGER_LIST: ['no_na_4']
+# one Beta per scenario (growth rate here)
+beta0_dict:
+    low: 0.01622242
+    high: 0.02599555
+deterministic: True
+
+
+# from header of simulate_multiple
+# previously hard-coded
+n_age: 5
+# number or risk groups
+n_risk: 2
+# CITY = 'Austin'
+CITY: NYC
+shift_week: 0
+time_begin_sim: 20200216
+# intervals within a day, determines time-step in hours
+interval_per_day: 10
+# number of days in simulation
+# 7 * 52
+total_time: 364
+# 0 days monitor lag
+monitor_lag: 0
+report_rate: 1.
+# initial populations of each compartment
+# START_CONDITION: 5
+I0: [[0, 0], [0, 0], [5, 0], [0, 0], [0, 0]]
+trigger_type: cml
+
+
+# added from published.yaml
+age_groups: 5
+R0: 2.2
+DOUBLE_TIME:
+  low: 7.2
+  high: 4.0
+T_EXPOSED_PARA: [5.6, 7, 8.2]
+T_Y_TO_R_PARA: [21.1, 22.6, 24.4]
+T_H_TO_R: 11.5
+ASYMP_RATE: 0.179
+PROP_TRANS_IN_E: 0.126
+T_ONSET_TO_H: 5.9
+T_H_TO_D: 11.2
+H_RELATIVE_RISK_IN_HIGH: 10
+D_RELATIVE_RISK_IN_HIGH: 10
+HIGH_RISK_RATIO:
+  0-4: 8.2825
+  5-17: 14.1121
+  18-49: 16.5298
+  50-64: 32.9912
+  65+: 47.0568
+H_FATALITY_RATIO:
+  0-9: 0.
+  10-19: 0.2
+  20-29: 0.2
+  30-39: 0.2
+  40-49: 0.4
+  50-59: 1.3
+  60-69: 3.6
+  70-79: 8
+  80+: 14.8
+INFECTION_FATALITY_RATIO:
+  0-9: 0.0016
+  10-19: 0.007
+  20-29: 0.031
+  30-39: 0.084
+  40-49: 0.16
+  50-59: 0.6
+  60-69: 1.9
+  70-79: 4.3
+  80+: 7.8
+OVERALL_H_RATIO:
+  0-9: 0.04
+  10-19: 0.04
+  20-29: 1.1
+  30-39: 3.4
+  40-49: 4.3
+  50-59: 8.2
+  60-69: 11.8
+  70-79: 16.6
+  80+: 18.4
+age_group_dict:
+  3: ['0-4', '5-17', '18+']
+  5: ['0-4', '5-17', '18-49', '50-64', '65+']

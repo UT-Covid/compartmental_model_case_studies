@@ -1,0 +1,41 @@
+{
+  "name": "seir-city-covid19-job-1586867555141",
+  "appId": "seir-city-covid19-1.1.1",
+  "batchQueue": "normal",
+  "maxRunTime": "01:00:00",
+  "memoryPerNode": "1GB",
+  "nodeCount": 1,
+  "processorsPerNode": 1,
+  "archive": true,
+  "inputs": {
+    "hosp_data_fp": "agave://covid19.community.storage/inputs/hospitalization/latest/Austin-Round_Rock_TX_hospitalized_20200402_through_20200408.csv"
+  },
+  "parameters": {
+    "deterministic": false,
+    "NUM_SIM": 100,
+    "NUM_SIM_FIT": 1,
+    "is_fitting": false,
+    "verbose": false,
+    "CITY": "Austin-Round_Rock",
+    "GROWTH_RATE_LIST": "high",
+    "R0": 2,
+    "DOUBLE_TIME": "low:7.2, high:4.0",
+    "beta0_dict": "low:0.01622242, high:0.02599555",
+    "ASYMP_RATE": 0,
+    "PROP_TRANS_IN_E": 0,
+    "T_ONSET_TO_H": 5,
+    "T_H_TO_D": 14,
+    "T_H_TO_R": 11,
+    "T_EXPOSED_PARA": "5.6, 7, 8.2",
+    "T_Y_TO_R_PARA": "21.1, 22.6, 24.4",
+    "H_RELATIVE_RISK_IN_HIGH": 10,
+    "D_RELATIVE_RISK_IN_HIGH": 10,
+    "START_CONDITION": 1,
+    "CONTACT_REDUCTION": "0.5",
+    "sd_date": "20200325, 20200818",
+    "time_begin_sim": 20200215,
+    "interval_per_day": 10,
+    "total_time": 175
+  },
+  "notifications": []
+}

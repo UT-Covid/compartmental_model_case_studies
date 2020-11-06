@@ -1,0 +1,10 @@
+FROM jupyter/minimal-notebook:latest
+ENV HOME=/home/jovyan
+
+ARG REQUIREMENTS=requirements.txt
+COPY $REQUIREMENTS /$REQUIREMENTS
+RUN pip install -r /$REQUIREMENTS
+ENV PYTHONPATH=$PYTHONPATH:$HOME:$HOME/analysis
+
+# copy data
+COPY analysis $HOME/analysis

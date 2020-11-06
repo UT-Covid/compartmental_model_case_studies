@@ -1,0 +1,12 @@
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200220.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200209.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200221.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200210.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200222.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200211.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200223.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200212.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200224.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200213.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200225.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200225.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200226.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200226.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200227.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200227.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200228.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200228.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200229.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200229.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200301.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200301.csv 
+python3 -m src.SEIRcity --config-yaml configs/epidemic_emergence_transmission_reduction/beaumont/fit_start_beaumont_20200302.yaml --out-fp outputs/beaumont_fit/fit_start_beaumont_20200302.csv 

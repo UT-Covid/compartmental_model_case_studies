@@ -1,0 +1,153 @@
+######################################################
+# multiple_scenario2.yaml
+
+# Given transmission coefficient (beta0), degree
+# of social distancing (CONTACT_REDUCTION), and many other
+# parameters below, run SEIR model simulation stochastically
+# for multiple different scenarios. Simulate each unique
+# scenario with 3 replicates.
+
+######################################################
+
+# Boolean switch: determines whether to fit single
+# scenario to existing data (True), or alternatively
+# run a simulation for one or more scenarios (False)
+is_fitting: False
+# Boolean switch: whether to run simulation/fit
+# deterministically (True) or stochastically (False)
+deterministic: False
+# Transmission coefficient beta0. Only values that have keys in
+# GROWTH_RATE_LIST will be read.
+beta0_dict:
+    low: 0.01622242
+    high: 0.02599555
+# Number of age groups
+n_age: 5
+# Number of risk groups
+n_risk: 2
+# City identifier
+CITY: NYC
+# Number of replicates to run per scenario
+NUM_SIM: 3
+# Monitor lag as number of days
+monitor_lag: 0
+# Report rate proportion
+# (100% report rate == 1.)
+report_rate: 1.
+# Initial infected value
+# START_CONDITION: 5
+I0: [[0, 0], [0, 0], [5, 0], [0, 0], [0, 0]]
+# Boolean switch: print to console or no
+verbose: False
+
+######################################################
+# File paths
+
+# Directory containing demographic and
+# school calendar data
+DATA_FOLDER: "./data/Cities_Data/"
+# Directory in which to write output files
+RESULTS_DIR: "./outputs"
+
+######################################################
+# Timing
+
+# Day on which to begin simulation/fitting run
+# (e.g. 20200216)
+time_begin_sim: 20200216
+# Number of weeks to shift start date (time_begin_sim)
+shift_week: 0
+# time-steps to calculate per day
+interval_per_day: 10
+# Total number of days to simulate
+# 7 * 52
+total_time: 364
+
+######################################################
+# Scenario definition
+
+# One scenario is simulated/fit for
+# every unique combination of elements
+# in the below lists
+
+# List of string growth rates to test beta0_dict must have
+# a value for each string key in this list
+GROWTH_RATE_LIST: ['low', 'high']
+# Define how school closure is simulated
+# Can be 'current', 'new', or 'cml'
+trigger_type: 'cml'
+# Trigger that simulates school closure
+# Note that Python variable FallStartDate can be injected
+# by wrapping the variable name in double curly braces
+# (e.g. ['date__{{time_begin_sim}}'])
+CLOSE_TRIGGER_LIST:
+    - 'num_all_20'
+    - 'date__{{time_begin_sim}}'
+# Trigger that simulates school reopening
+# Note that Python variable FallStartDate can be injected
+# by wrapping the variable name in double curly braces
+# (e.g. ['no_na_{{FallStartDate}}'])
+REOPEN_TRIGGER_LIST:
+    - 'no_na_{{FallStartDate}}'
+    - 'no_na_8'
+# Proportion of contact reduction/social distancing
+CONTACT_REDUCTION: [0, 0.5]
+# Dates on which to begin and end, respectively, contact
+# reduction/social distancing as defined by CONTACT_REDUCTION
+sd_date: [20200325, 20200818]
+
+######################################################
+# Misc. epidemiological/demographic parameters
+
+R0: 2.2
+DOUBLE_TIME:
+  low: 7.2
+  high: 4.0
+T_EXPOSED_PARA: [5.6, 7, 8.2]
+T_Y_TO_R_PARA: [21.1, 22.6, 24.4]
+T_H_TO_R: 14.
+ASYMP_RATE: 0.179
+PROP_TRANS_IN_E: 0.126
+T_ONSET_TO_H: 5.9
+T_H_TO_D: 14.
+H_RELATIVE_RISK_IN_HIGH: 10
+D_RELATIVE_RISK_IN_HIGH: 10
+HIGH_RISK_RATIO:
+  0-4: 8.2825
+  5-17: 14.1121
+  18-49: 16.5298
+  50-64: 32.9912
+  65+: 47.0568
+H_FATALITY_RATIO:
+  0-9: 0.
+  10-19: 0.2
+  20-29: 0.2
+  30-39: 0.2
+  40-49: 0.4
+  50-59: 1.3
+  60-69: 3.6
+  70-79: 8
+  80+: 14.8
+INFECTION_FATALITY_RATIO:
+  0-9: 0.0016
+  10-19: 0.007
+  20-29: 0.031
+  30-39: 0.084
+  40-49: 0.16
+  50-59: 0.6
+  60-69: 1.9
+  70-79: 4.3
+  80+: 7.8
+OVERALL_H_RATIO:
+  0-9: 0.04
+  10-19: 0.04
+  20-29: 1.1
+  30-39: 3.4
+  40-49: 4.3
+  50-59: 8.2
+  60-69: 11.8
+  70-79: 16.6
+  80+: 18.4
+age_group_dict:
+  3: ['0-4', '5-17', '18+']
+  5: ['0-4', '5-17', '18-49', '50-64', '65+']
