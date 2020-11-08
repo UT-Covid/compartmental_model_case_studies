@@ -21,7 +21,7 @@ All paths are relative to the `compartmental_model_case_studies` directory, or s
 	The following bash script runs a single call to `python -m src.SEIRcity` that jointly estimates baseline transmission rate and transmission rate reduction after implementation of social distancing measures. The resulting parameters are written to a `csv` file. The header `beta0` indicates the baseline transmission rate; the header `c_reduction` indicates the transmission rate reduction.
 	
 	```bash
-	./fit_start_austin.sh
+	python3 -m src.SEIRcity --config-yaml configs/transmission_rate_and_reduction/austin_fit_trans_rate_and_reduction.yaml --out-fp </path/to/output.csv>
 	```
 
 2. Simulate the healthcare burden under the estimated parameters
