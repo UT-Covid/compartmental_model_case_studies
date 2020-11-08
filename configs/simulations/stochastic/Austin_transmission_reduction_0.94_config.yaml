@@ -99,12 +99,12 @@ beta0_dict:
 deterministic: false
 hosp_data_fp: ./data/hospitalization/2020-04-16/Austin-Round_Rock.csv
 interval_per_day: 10
-is_fitting: true
+is_fitting: false
 monitor_lag: 0
 n_age: 5
 n_risk: 2
 report_rate: 1.0
-contact_reduction_date:
+c_reduction_date:
 - 20200324
 - 20200818
 shift_week: 0
