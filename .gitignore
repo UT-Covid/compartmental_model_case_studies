@@ -72,7 +72,8 @@ outputs/*.png
 untracked/*
 
 # configs (may be needed for tests, ignore rather than delete just in case)
-src/SEIRcity/configs/*
+src/SEIRcity/configs/example/*
+src/SEIRcity/configs/sim*
 
 # sbatch / test logs
 logs/*.o*
